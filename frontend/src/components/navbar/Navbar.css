@@ -1,0 +1,23 @@
+.navbar-main{
+    background-color: #040509;
+    position: fixed;
+    width: 100vw;
+    height: 11vh;
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+li:last-child{
+    margin-right: 0px;
+}

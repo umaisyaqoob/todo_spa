@@ -1,24 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from './pages/auth/Login' // Here LoginPage importing from default export, therefor i'm importing custom name
+import SingupPage from './pages/auth/Singup' // Here LoginPage importing from default export, therefor i'm importing custom name
+import { NotFound } from "./pages/errors/NotFound";
+import Home from "./pages/dashboard/Home";
+import Loader from "./components/loader/Loader";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
 import logo from './logo.svg';
 import './App.css';
+import {UserProvider} from "./context/userContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+            {/* <Route path="/" element={<ProtectedRoute> <Home /> </ProtectedRoute> } /> */}
+            <Route path="/" element={<UserProvider> <Home /> </UserProvider>} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SingupPage />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    </Router>
   );
 }
 
