@@ -51,7 +51,7 @@ function Login() {
     return (
         <>
             <section className="main h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
-                <form className="login-form w-1/3 rounded-xl p-[25px] border border-gray-700 shadow-xl bg-gray-800 bg-opacity-90 backdrop-blur-lg" onSubmit={handleSubmit}>
+                <form className="login-form w-full h-screen rounded-none p-4 bg-gray-800 bg-opacity-90 backdrop-blur-lg shadow-none border-none xs:w-1/3 xs:h-auto xs:rounded-xl xs:p-[25px] xs:border xs:border-gray-700 xs:shadow-xl" onSubmit={handleSubmit}>
                     <h1 className="w-full text-center text-[30px] mb-3 text-white font-semibold tracking-wide">Login</h1>
 
                     <input
